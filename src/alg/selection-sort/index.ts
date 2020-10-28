@@ -3,7 +3,7 @@ import { swap } from '../util'
 
 class SelectionSort {
   public static sort<T>(ary: T[], compareTo?: CompareTo<T>) {
-    if (ary.length === 0) return ary
+    if (ary.length === 0) return
 
     for (let i = 0; i < ary.length; i++) {
       let minIndex = i
@@ -12,7 +12,9 @@ class SelectionSort {
           minIndex = j
         }
       }
-      swap(ary, i, minIndex)
+      if (i !== minIndex) {
+        swap(ary, i, minIndex)
+      }
     }
   }
 }
