@@ -1,4 +1,4 @@
-import SelectSort from '../src/alg/select-sort'
+import SelectionSort from '../src/alg/selection-sort'
 import { CompareTo } from '../src/type'
 
 interface IStudent {
@@ -9,13 +9,13 @@ interface IStudent {
 describe('Select Sort Test', () => {
   it('works if data is number', () => {
     const data: number[] = [3, 6, 9, 0, 1]
-    SelectSort.sort(data)
+    SelectionSort.sort(data)
     expect(data).toEqual([0, 1, 3, 6, 9])
   })
 
   it('works if data is string', () => {
     const data: string[] = ['z', 'b', 'a', 'd', 'c']
-    SelectSort.sort(data)
+    SelectionSort.sort(data)
     expect(data).toEqual(['a', 'b', 'c', 'd', 'z'])
   })
 
@@ -39,7 +39,7 @@ describe('Select Sort Test', () => {
       return one.age - two.age
     }
 
-    SelectSort.sort(data, compareTo)
+    SelectionSort.sort(data, compareTo)
 
     expect(data).toEqual([studentThree, studentTwo, studentOne])
   })

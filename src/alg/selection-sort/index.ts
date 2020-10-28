@@ -1,7 +1,7 @@
 import { CompareTo } from '../../type'
 import { swap } from '../util'
 
-class SelectSort {
+class SelectionSort {
   public static sort<T>(ary: T[], compareTo?: CompareTo<T>) {
     if (ary.length === 0) return ary
 
@@ -17,4 +17,4 @@ class SelectSort {
   }
 }
 
-export default SelectSort
+export default SelectionSort
