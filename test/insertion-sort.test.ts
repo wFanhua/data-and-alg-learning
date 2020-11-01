@@ -11,11 +11,19 @@ describe('Insertion Sort Test', () => {
     const data: number[] = [3, 6, 9, 0, 1]
     InsertionSort.sort(data)
     expect(data).toEqual([0, 1, 3, 6, 9])
+
+    const data2: number[] = [3, 6, 9, 0, 1]
+    InsertionSort.sort2(data2)
+    expect(data).toEqual([0, 1, 3, 6, 9])
   })
 
   it('works if data is string', () => {
     const data: string[] = ['z', 'b', 'a', 'd', 'c']
     InsertionSort.sort(data)
+    expect(data).toEqual(['a', 'b', 'c', 'd', 'z'])
+
+    const data2: string[] = ['z', 'b', 'a', 'd', 'c']
+    InsertionSort.sort2(data2)
     expect(data).toEqual(['a', 'b', 'c', 'd', 'z'])
   })
 
@@ -35,11 +43,17 @@ describe('Insertion Sort Test', () => {
 
     const data: IStudent[] = [studentThree, studentOne, studentTwo]
 
+    const data2: IStudent[] = [studentThree, studentOne, studentTwo]
+
     const compareTo: CompareTo<IStudent> = (one, two) => {
       return one.age - two.age
     }
 
     InsertionSort.sort(data, compareTo)
+
+    expect(data).toEqual([studentThree, studentTwo, studentOne])
+
+    InsertionSort.sort2(data2, compareTo)
 
     expect(data).toEqual([studentThree, studentTwo, studentOne])
   })
